@@ -1,18 +1,16 @@
-package kiosk
-
 class MenuBoard
     (
     private var menuBoardName: String ,
     private var keyNumber: Int)
 {
     private val menus: ArrayList<Menu> = ArrayList<Menu>()
-    
+
     // 메뉴보드 정보 표시
     fun displayMenuBoardInfo()
     {
         println("${keyNumber}. ${menuBoardName}")
     }
-    
+
     // 메뉴 리스트 정보 표시
     fun displayMenu()
     {
@@ -23,7 +21,7 @@ class MenuBoard
             menu.displayInfo()
         }
     }
-    
+
     // 메뉴보드에 메뉴 추가
     fun addMenu(menu: Menu)
     {

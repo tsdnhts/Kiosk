@@ -1,16 +1,15 @@
-package kiosk
-
 fun main(args: Array<String>) {
 
     // 메뉴 보드 리스트
-    var menuList = arrayOf(MenuBoard("생과일", 1), MenuBoard("주스", 2), MenuBoard("탕후루", 3))
+    var menuList = arrayOf(MenuBoard("햄버거", 1), MenuBoard("사이드 메뉴", 2),
+        MenuBoard("세트 메뉴", 3), MenuBoard("디저트", 4))
 
     addMenus(menuList) // 메뉴 추가.
 
     // 키오스크 전체 프로그램.
     while(true)
     {
-        println("과일 가게")
+        println("맥도날드")
         // 메뉴 보드 정보를 보여줌.
         for(menuBoard in menuList)
         {
@@ -65,25 +64,32 @@ fun main(args: Array<String>) {
 
 fun addMenus(menuList: Array<MenuBoard>)
 {
-    // 생과일 메뉴 추가.
-    menuList[0].addMenu(Fruit(700, "딸기", 40, "맛있는 제철 딸기", 5))
-    menuList[0].addMenu(Fruit(1500, "바나나", 20, "당도 높은 바나나(당뇨병 환자 엄금)", 4))
-    menuList[0].addMenu(Fruit(2000, "사과", 30, "중력이 좋아하는 사과", 2))
-    menuList[0].addMenu(Fruit(1000, "키위", 15, "상큼한 키위", 3))
-    menuList[0].addMenu(Fruit(1500, "복숭아", 10, "탱글탱글한 복숭아", 2))
-    menuList[0].addMenu(Fruit(1800, "포도", 10, "편히 먹을 수 있는 씨없는 포도", 3))
-    // 주스 메뉴 추가
-    menuList[1].addMenu(Juice(2000, "딸기 주스", 20, "산지 직송 딸기 주스", 1))
-    menuList[1].addMenu(Juice(2000, "바나나 주스", 10, "아침을 안 먹는 당신을 위한 칼로리 높은 바나나 주스(다이어트 하는 사람 엄금)", 1))
-    menuList[1].addMenu(Juice(2000, "사과 주스", 30, "식후 소화를 돕는 사과 주스", 1))
-    menuList[1].addMenu(Juice(2000, "키위 주스", 10, "상큼한 키위 주스", 1))
-    menuList[1].addMenu(Juice(2000, "복숭아 주스", 10, "강제 물복이 된 복숭아", 1))
-    menuList[1].addMenu(Juice(2000, "포도 주스", 6, "대기업 보다 맛있는 포도 주스", 1))
-    // 탕후루 메뉴 추가
-    menuList[2].addMenu(Tanghulu(3000, "딸기 탕후루", 50, "근본 탕후루", 3))
-    menuList[2].addMenu(Tanghulu(3000, "바나나 탕후루", 10, "혈당 스타", 3))
-    menuList[2].addMenu(Tanghulu(3000, "사과 탕후루", 0, "옆집 잼민이도 좋아하는 사과 탕후루", 3))
-    menuList[2].addMenu(Tanghulu(3000, "키위 탕후루", 2, "백종원도 울고갈 설탕 듬뿍 키위 탕후루", 3))
-    menuList[2].addMenu(Tanghulu(3000, "복숭아 탕후루", 12, "강제 딱복이 된 복숭아", 3))
-    menuList[2].addMenu(Tanghulu(3000, "포도 탕후루", 50, "샤인머스켓 아님 취급 안함.", 3))
+    // 햄버거 메뉴 추가.
+    menuList[0].addMenu(hamburger(5500, "빅맥", 40, "순 소고기 패티 2장에 치즈와 신선한 양상추, 양파, 그리고 피클까지", 5))
+    menuList[0].addMenu(hamburger(5700, "1955버거", 20, "더 풍성해진 신선한 양상추와 깊은 풍미의 그릴드 어니언까지)", 4))
+    menuList[0].addMenu(hamburger(5300, "베이컨 토마토 디럭스", 30, "두장의 순 쇠고기 패티에 신선한 토마토와 양상추", 2))
+    menuList[0].addMenu(hamburger(5000, "쿼터파운드 치즈", 15, "두배이상 커진 비프와 부드러운 치즈 두장의 환상 궁합", 3))
+    menuList[0].addMenu(hamburger(2000, "불고기 버거", 10, "한국인의 입맛에 맞는 불고기 소스에 잘 재운 패티", 2))
+    menuList[0].addMenu(hamburger(5600, "맥스파이시 상하이 버거", 10, "닭가슴 통살 위 아삭아삭한 양상추와 신선한 토마토", 3))
+    // 사이드 메뉴 추가
+    menuList[1].addMenu(sidemenu(3000, "맥너겟", 20, "바삭하고 촉촉한 치킨이 입안에 쏙", 1))
+    menuList[1].addMenu(sidemenu(4900, "맥 스파이시 치킨 텐더", 10, "닭 안심살을 스파이시 시즈닝으로 매콤 바삭하게 튀겨낸 치킨 텐더)", 1))
+    menuList[1].addMenu(sidemenu(3900, "골든 모짜렐라 치즈 스틱", 30, "속이 꽉 찬 황금빛 바삭함", 1))
+    menuList[1].addMenu(sidemenu(2800, "후렌치 후라이", 10, "통으로 썰어낸 감자를 맥도날드만의 노하우로 튀겨낸 월드 클래스 후렌치 후라이", 1))
+
+    // 세트 메뉴 추가
+    menuList[2].addMenu(setmenu(5500, "빅맥 세트", 100, "빅맥 세트", 3))
+    menuList[2].addMenu(setmenu(5700, "1955버거 세트", 100, "1955버거 세트", 3))
+    menuList[2].addMenu(setmenu(5300, "베이컨 토마토 디럭스 세트", 100, "베이컨 토마토 디럭스 세트", 3))
+    menuList[2].addMenu(setmenu(5000, "쿼터파운드 치즈 세트", 10, "쿼터파운드 치즈 세트", 3))
+    menuList[2].addMenu(setmenu(2000, "불고기 버거 세트", 120, "불고기 버거 세트", 3))
+    menuList[2].addMenu(setmenu(5600, "맥스파이시 상하이 버거 세트", 100, "맥스파이시 상하이 버거 세트", 3))
+
+    // 디저트 메뉴 추가
+    menuList[3].addMenu(setmenu(2500, "오레오 맥플러리", 150, "우유 듬뿍 신선한 아이스크림", 3))
+    menuList[3].addMenu(setmenu(2500, "딸기 오레오 맥플러리", 150, "상큼한 딸기와 달콤한 오레오 쿠키가 신선한 우유 아이스크림에 퐁당", 3))
+    menuList[3].addMenu(setmenu(2500, "초코 오레오 맥플러리", 150, "초콜릿 피치와 오레오 쿠키까지 달달함이 두배로", 3))
+    menuList[3].addMenu(setmenu(700, "아이스크림 콘", 150, "신선한 우유로 만든 부드러운 아이스크림 콘", 3))
+    menuList[3].addMenu(setmenu(900, "초코콘", 150, "달달한 초콜릿 옷을 입은 소프트 아이스크림", 3))
+    menuList[3].addMenu(setmenu(3000, "오레오 아포가토", 150, "진한 에스프레소에 바닐라 아이스크림으로 달콤쌉쌀하게, 오레오 쿠키로 바삭함까지", 3))
 }

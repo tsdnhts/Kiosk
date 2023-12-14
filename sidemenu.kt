@@ -1,6 +1,4 @@
-package kiosk
-
-class Juice (price: Int,
+class sidemenu (price: Int,
              private var name: String,
              private var storeCount: Int,
              private var explanation: String,

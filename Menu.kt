@@ -1,5 +1,3 @@
-package kiosk
-
 open class Menu(
     private var price: Int,
     private var name: String,
@@ -13,7 +11,7 @@ open class Menu(
     {
         println("| ${name} | ${getPrice()} | ${explanation}")
     }
-    
+
     // 가격 반환
     open fun getPrice(): Int
     {
